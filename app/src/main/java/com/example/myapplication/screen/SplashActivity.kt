@@ -14,7 +14,6 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var binding:ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         window.setStatusBar(this, ContextCompat.getColor(this, R.color.app_color))
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -23,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun navigate() {
         Handler().postDelayed(Runnable {
-         startActivity(Intent(this, MainActivity::class.java))
+         startActivity(Intent(this, TutorialsActivity::class.java))
          finish()
         },Constants.SPLASH_TIME_OUT)
     }

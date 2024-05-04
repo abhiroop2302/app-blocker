@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:elevation="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_weight="0.5"
+            android:paddingTop="@dimen/_5sdp"
+            android:background="@drawable/bg_dark_tutorial"
+            android:orientation="vertical">
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/WeekDays"
+                android:text="M"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/bg_light_rectangle"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/bg_light_rectangle"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_weight="0.5"
+            android:paddingTop="@dimen/_5sdp"
+            android:background="@drawable/bg_dark_tutorial"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:orientation="vertical">
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/WeekDays"
+                android:text="T"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/bg_light_rectangle"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/bg_light_rectangle"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_weight="0.5"
+            android:paddingTop="@dimen/_5sdp"
+            android:background="@drawable/bg_dark_tutorial"
+            android:orientation="vertical">
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/WeekDays"
+                android:text="W"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:src="@drawable/bg_light_rectangle"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_weight="0.5"
+            android:paddingTop="@dimen/_5sdp"
+            android:background="@drawable/bg_dark_tutorial"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:orientation="vertical">
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/WeekDays"
+                android:text="T"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/bg_light_rectangle"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/bg_light_rectangle"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_weight="0.5"
+            android:paddingTop="@dimen/_5sdp"
+            android:background="@drawable/bg_dark_tutorial"
+
+            android:orientation="vertical">
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/WeekDays"
+                android:text="F"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/bg_light_rectangle"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/bg_light_rectangle"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_weight="0.5"
+            android:paddingTop="@dimen/_5sdp"
+            android:background="@drawable/bg_dark_tutorial"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+
+            android:orientation="vertical">
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/WeekDays"
+                android:text="S"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_weight="0.5"
+            android:paddingTop="@dimen/_5sdp"
+            android:background="@drawable/bg_dark_tutorial"
+
+            android:orientation="vertical">
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/WeekDays"
+                android:text="S"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_light_rectangle"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

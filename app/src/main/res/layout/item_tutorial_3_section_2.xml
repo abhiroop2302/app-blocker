@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/WeekDays"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:text="M"
+            android:textColor="@color/app_color"
+            android:gravity="center_horizontal|bottom"
+            android:textSize="@dimen/_13ssp"
+            android:background="@drawable/bg_light_tutorial"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible" />
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/WeekDays"
+            android:layout_width="@dimen/_20sdp"
+            android:textSize="@dimen/_13ssp"
+            android:layout_height="@dimen/_70sdp"
+            android:text="T"
+            android:textColor="@color/app_color"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:gravity="center_horizontal|bottom"
+            android:background="@drawable/bg_light_tutorial"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/WeekDays"
+            android:layout_height="@dimen/_90sdp"
+            android:text="W"
+            android:gravity="center_horizontal|bottom"
+            android:layout_width="@dimen/_20sdp"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/_13ssp"
+            android:background="@drawable/bg_light_tutorial"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/WeekDays"
+            android:layout_height="@dimen/_92sdp"
+            android:text="T"
+            android:gravity="center_horizontal|bottom"
+            android:layout_width="@dimen/_20sdp"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/app_color"
+
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:background="@drawable/bg_light_tutorial"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/WeekDays"
+            android:layout_height="@dimen/_100sdp"
+            android:text="F"
+            android:gravity="center_horizontal|bottom"
+            android:layout_width="@dimen/_20sdp"
+            android:textColor="@color/app_color"
+
+            android:textSize="@dimen/_13ssp"
+            android:background="@drawable/bg_light_tutorial"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/WeekDays"
+            android:layout_height="@dimen/_90sdp"
+            android:text="S"
+            android:gravity="center_horizontal|bottom"
+            android:layout_width="@dimen/_20sdp"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/app_color"
+
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:background="@drawable/bg_light_tutorial"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/WeekDays"
+            android:layout_height="@dimen/_80sdp"
+            android:text="S"
+            android:gravity="center_horizontal|bottom"
+            android:layout_width="@dimen/_20sdp"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/app_color"
+            android:background="@drawable/bg_light_tutorial"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
