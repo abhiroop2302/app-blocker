@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="app_color">#F27DA368</color>
     <color name="tutorial_color">#B7D8AA</color>
+    <color name="add_color">#A64CBB1B</color>
+    <color name="bottom_nav_bar_background_color">#B3FFFFFF</color>
 </resources>

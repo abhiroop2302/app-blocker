@@ -106,6 +106,7 @@ class TutorialsActivity : AppCompatActivity(), PagePosListener {
      *  2.) Secondly we are use this callback to change the indication view on the bottom of the screen to show the page.
      */
     override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+
         loadInitialPageForFirstTime()
 
         if (viewPagerManager.isLastPage) {
@@ -113,14 +114,17 @@ class TutorialsActivity : AppCompatActivity(), PagePosListener {
             toggleIndicator(viewPagerManager.activePage)
             return
         }
+
         toggleIndicator(viewPagerManager.activePage)
         binding.fabNext.setImageResource(R.drawable.ic_next)
+
     }
 
     /**
      *  this function will only execute for the first time the activity loads the view pager.
      */
     private fun loadInitialPageForFirstTime() {
+
         if (firstTime)
             return
 
@@ -135,9 +139,6 @@ class TutorialsActivity : AppCompatActivity(), PagePosListener {
      */
     override fun onPageSelected(position: Int) {
 
-        if(!loadTutorial)
-            return
-
         loadTutorial(fragmentList[position])
         resetViewForPreviousFragment()
     }
@@ -145,10 +146,13 @@ class TutorialsActivity : AppCompatActivity(), PagePosListener {
     private fun resetViewForPreviousFragment() {
         if(viewPagerManager.lastActivePage == -1)
             return
+
         fragmentList[viewPagerManager.lastActivePage].resetView()
     }
 
-    override fun onPageScrollStateChanged(state: Int) {}
+    override fun onPageScrollStateChanged(state: Int) {
+
+    }
 
 
     companion object {

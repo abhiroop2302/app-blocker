@@ -4,17 +4,24 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tutorial_1_title">Block Apps</string>
     <string name="tutorial_1_sub_title">No more wasting time!</string>
-    <string name="tutorial_1_sub_title_2">Improve your <b>productivity</b> and \n<b>digital wellbeing</b>\n\n by getting control over your phone usage</string>
+    <string name="tutorial_1_sub_title_2">Improve your <b>productivity</b> and \n<b>digital well-being</b>\n\n by getting control over your phone usage</string>
     <string name="tutorial_2_title">Create Blocks</string>
     <string name="tutorial_2_sub_title">Select apps to block</string>
     <string name="tutorial_2_sub_title_1">Select time when block is active in week</string>
     <string name="tutorial_2_sub_title_2">Or set a usage limit</string>
-    <string name="tutorial_2_sub_title_3">30 mins</string>
-    <string name="tutorial_2_sub_title_4">No more distractional</string>
+    <string name="tutorial_2_sub_title_3">30 min</string>
+    <string name="tutorial_2_sub_title_4">No more distraction</string>
     <string name="tutorial_2_sub_title_5">Blocked</string>
     <string name="tutorial_4_title">Need more control?</string>
     <string name="tutorial_4_sub_title">Enable strict blocking to prevent \nblocked apps from being unlocked</string>
     <string name="tutorial_4_sub_title_1">Only a reboot will disable strict blocks,\nif needed you can even disable this in the settings</string>
     <string name="tutorial_3_title">View your app usage</string>
     <string name="tutorial_3_subtitle">Get weekly usage report</string>
+
+    <string name="nav_item_1">Blocks</string>
+    <string name="nav_item_2">App Usage</string>
+    <string name="nav_item_3">Reports</string>
+    <string name="nav_item_4">Archive</string>
+    <string name="add_restriction">Add Restriction</string>
+
 </resources>
