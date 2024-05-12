@@ -23,5 +23,10 @@
     <string name="nav_item_3">Reports</string>
     <string name="nav_item_4">Archive</string>
     <string name="add_restriction">Add Restriction</string>
+    <string name="upgrade">upgrade</string>
+    <string name="save_time">Saving time?</string>
+    <string name="help"><![CDATA[Help & FAQ]]></string>
+    <string name="translate">Help Translate</string>
+    <string name="settings">Settings</string>
 
 </resources>

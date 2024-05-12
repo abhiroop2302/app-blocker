@@ -1,11 +1,7 @@
 package com.example.myapplication.manager
 
-import android.content.Context
-import android.graphics.drawable.Drawable
 import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatImageView
-import androidx.core.content.ContextCompat
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.myapplication.R
@@ -21,13 +17,15 @@ import com.google.android.material.textview.MaterialTextView
 
 class NavigationManager(
     private val binding: BottomNavBarBinding,
-    private val fragmentManager: FragmentManager
+    private val fragmentManager: FragmentManager,
+    private val tabChangeListener: TabChangeListener
 ) {
 
     private val selectedIconList: ArrayList<Int> = ArrayList()
     private val unselectedIconList: ArrayList<Int> = ArrayList()
     private val screenList: ArrayList<Fragment> = ArrayList()
     private val tabList: ArrayList<TabView> = ArrayList()
+    private val tabInfoNameList: ArrayList<String> = ArrayList()
 
     private var activePos = 0
 
@@ -37,24 +35,25 @@ class NavigationManager(
     }
 
     private fun setTabListener() {
-        for (i in tabList.indices){
+        for (i in tabList.indices) {
             tabList[i].rootView().setOnClickListener {
                 updateTab(i)
             }
         }
 
         binding.fabAdd.setOnClickListener {
-            doNavigation(screenList.size - 1 )
+           tabChangeListener.addRestriction()
         }
     }
 
     private fun updateTab(pos: Int) {
-        if(activePos == pos)
+        if (activePos == pos)
             return
 
         updateTabView(activePos, false)
         updateTabView(pos, true)
         doNavigation(pos)
+        tabChangeListener.onTabChanged(tabInfoNameList[pos])
         activePos = pos
     }
 
@@ -72,8 +71,8 @@ class NavigationManager(
     }
 
     private fun updateIcon(tabPos: Int, selected: Boolean): Int {
-        return when(selected){
-            true-> selectedIconList[tabPos]
+        return when (selected) {
+            true -> selectedIconList[tabPos]
             else -> unselectedIconList[tabPos]
         }
     }
@@ -84,6 +83,18 @@ class NavigationManager(
         initSelectedIconList()
         initUnselectedIconList()
         initScreenList()
+        initTabInfoNameList()
+    }
+
+    private fun initTabInfoNameList() {
+        tabInfoNameList.apply {
+            MainApplication.getInstance().applicationContext.apply {
+                add(getString(R.string.nav_item_1))
+                add(getString(R.string.nav_item_2))
+                add(getString(R.string.nav_item_3))
+                add(getString(R.string.nav_item_4))
+            }
+        }
     }
 
     private fun initScreenList() {
@@ -124,20 +135,25 @@ class NavigationManager(
                 add(TabView(llBlock, ivNavLock, tvLock))
                 add(TabView(llAppUsage, ivNavAppUsage, tvAppUsage))
                 add(TabView(llReports, ivNavReports, tvReports))
-                add(TabView(llArchive,ivNavArchive, tvArchive))
+                add(TabView(llArchive, ivNavArchive, tvArchive))
             }
         }
     }
 
 
-    inner  class TabView(
-        private val tabParentView : LinearLayout,
-        private val tabIconView:AppCompatImageView,
-        private val tabInfoView:MaterialTextView
-    ){
+    inner class TabView(
+        private val tabParentView: LinearLayout,
+        private val tabIconView: AppCompatImageView,
+        private val tabInfoView: MaterialTextView
+    ) {
         fun rootView() = tabParentView
         fun infoView() = tabInfoView
         fun iconView() = tabIconView
+    }
+
+    interface TabChangeListener {
+        fun onTabChanged(appBarTitle: String)
+        fun addRestriction()
     }
 
 
