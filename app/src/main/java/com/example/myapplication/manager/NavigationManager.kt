@@ -5,9 +5,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.myapplication.R
-import com.example.myapplication.application.MainApplication
 import com.example.myapplication.databinding.BottomNavBarBinding
-import com.example.myapplication.screen.add_block_section.RestrictionFragment
 import com.example.myapplication.screen.app_usage_section.AppUsageFragment
 import com.example.myapplication.screen.archive_section.ArchiveFragment
 import com.example.myapplication.screen.block_section.BlockSectionFragment
@@ -15,17 +13,21 @@ import com.example.myapplication.screen.reports_section.ReportsFragment
 import com.example.myapplication.utility.toggleTabColor
 import com.google.android.material.textview.MaterialTextView
 
+/**
+ *  This class is responsible for the navigation flow for the bottom nav bar in the main screen.
+ *
+ *  Logic Used -> I have created the list for the all tabs with the necessary properties which is used ,
+ *  user select/unselect the tab , now i will take care of the valid tab click i have store the previous tab
+ *  click by the user in the (active tab bit , by default = 0  which means 1st tab is selected), it will only change
+ *  user click on the tab whose (position != active tab bit)
+ *
+ */
 class NavigationManager(
     private val binding: BottomNavBarBinding,
     private val fragmentManager: FragmentManager,
     private val tabChangeListener: TabChangeListener
 ) {
-
-    private val selectedIconList: ArrayList<Int> = ArrayList()
-    private val unselectedIconList: ArrayList<Int> = ArrayList()
-    private val screenList: ArrayList<Fragment> = ArrayList()
-    private val tabList: ArrayList<TabView> = ArrayList()
-    private val tabInfoNameList: ArrayList<String> = ArrayList()
+    private val tabModal: ArrayList<NavItemModal> = ArrayList()
 
     private var activePos = 0
 
@@ -35,14 +37,14 @@ class NavigationManager(
     }
 
     private fun setTabListener() {
-        for (i in tabList.indices) {
-            tabList[i].rootView().setOnClickListener {
+        for (i in tabModal.indices) {
+            tabModal[i].tabParentView.setOnClickListener {
                 updateTab(i)
             }
         }
 
         binding.fabAdd.setOnClickListener {
-           tabChangeListener.addRestriction()
+            tabChangeListener.addRestriction()
         }
     }
 
@@ -53,108 +55,105 @@ class NavigationManager(
         updateTabView(activePos, false)
         updateTabView(pos, true)
         doNavigation(pos)
-        tabChangeListener.onTabChanged(tabInfoNameList[pos])
+        tabChangeListener.onTabChanged(tabModal[pos].tabInfoView.text.trim().toString())
         activePos = pos
     }
 
     private fun doNavigation(pos: Int) {
         fragmentManager.beginTransaction().apply {
-            replace(R.id.fragmentContainer, screenList[pos])
+            replace(R.id.fragmentContainer, tabModal[pos].screenView)
             commit()
         }
     }
 
     private fun updateTabView(tabPos: Int, isSelected: Boolean) {
-        tabList[tabPos].infoView().toggleTabColor(isSelected)
-        tabList[tabPos].iconView().setImageResource(updateIcon(tabPos, isSelected))
+        tabModal[tabPos].tabInfoView.toggleTabColor(isSelected)
+        tabModal[tabPos].tabIconView.setImageResource(updateIcon(tabPos, isSelected))
 
     }
 
     private fun updateIcon(tabPos: Int, selected: Boolean): Int {
         return when (selected) {
-            true -> selectedIconList[tabPos]
-            else -> unselectedIconList[tabPos]
+            true -> tabModal[tabPos].selectedIcon
+            else -> tabModal[tabPos].unselectedIcon
         }
     }
 
 
     private fun initialize() {
-        initTabList()
-        initSelectedIconList()
-        initUnselectedIconList()
-        initScreenList()
-        initTabInfoNameList()
+        initTabModal()
     }
 
-    private fun initTabInfoNameList() {
-        tabInfoNameList.apply {
-            MainApplication.getInstance().applicationContext.apply {
-                add(getString(R.string.nav_item_1))
-                add(getString(R.string.nav_item_2))
-                add(getString(R.string.nav_item_3))
-                add(getString(R.string.nav_item_4))
-            }
-        }
-    }
-
-    private fun initScreenList() {
-        screenList.apply {
-            add(BlockSectionFragment())
-            add(AppUsageFragment())
-            add(ReportsFragment())
-            add(ArchiveFragment())
-            add(RestrictionFragment())
-        }
-    }
-
-    private fun initUnselectedIconList() {
-
-        unselectedIconList.apply {
-            add(R.drawable.ic_nav_lock_unselected)
-            add(R.drawable.ic_nav_hour_glass_unselected)
-            add(R.drawable.ic_nav_reports_unselected)
-            add(R.drawable.ic_nav_archive_unselected)
-        }
-
-    }
-
-    private fun initSelectedIconList() {
-
-        selectedIconList.apply {
-            add(R.drawable.ic_nav_lock_selected)
-            add(R.drawable.ic_nav_hour_glass_selected)
-            add(R.drawable.ic_nav_reports_selected)
-            add(R.drawable.ic_nav_archive_selected)
-        }
-
-    }
-
-    private fun initTabList() {
+    private fun initTabModal() {
         binding.apply {
-            tabList.apply {
-                add(TabView(llBlock, ivNavLock, tvLock))
-                add(TabView(llAppUsage, ivNavAppUsage, tvAppUsage))
-                add(TabView(llReports, ivNavReports, tvReports))
-                add(TabView(llArchive, ivNavArchive, tvArchive))
+            tabModal.apply {
+                add(
+                    NavItemModal(
+                        llBlock,
+                        ivNavLock,
+                        tvLock,
+                        R.drawable.ic_nav_lock_selected,
+                        R.drawable.ic_nav_lock_unselected,
+                        BlockSectionFragment()
+                    )
+                )
+
+                add(
+                    NavItemModal(
+                        llAppUsage,
+                        ivNavAppUsage,
+                        tvAppUsage,
+                        R.drawable.ic_nav_hour_glass_selected,
+                        R.drawable.ic_nav_hour_glass_unselected,
+                        AppUsageFragment()
+                    )
+                )
+                add(
+                    NavItemModal(
+                        llReports,
+                        ivNavReports,
+                        tvReports,
+                        R.drawable.ic_nav_reports_selected,
+                        R.drawable.ic_nav_reports_unselected,
+                        ReportsFragment()
+                    )
+                )
+
+                add(
+                    NavItemModal(
+                        llArchive,
+                        ivNavArchive,
+                        tvArchive,
+                        R.drawable.ic_nav_archive_selected,
+                        R.drawable.ic_nav_archive_unselected,
+                        ArchiveFragment()
+                    )
+                )
             }
         }
     }
 
-
-    inner class TabView(
-        private val tabParentView: LinearLayout,
-        private val tabIconView: AppCompatImageView,
-        private val tabInfoView: MaterialTextView
-    ) {
-        fun rootView() = tabParentView
-        fun infoView() = tabInfoView
-        fun iconView() = tabIconView
-    }
+    /**
+     *  interface listen to the events when the any tab from the bottom nav view is selected by the user.
+     */
 
     interface TabChangeListener {
         fun onTabChanged(appBarTitle: String)
         fun addRestriction()
     }
 
-
 }
+
+/**
+ *  custom class modal for the navigation tab view , helpful because if
+ *  we have to add something in the tab property then we can add it over here
+ *  to make sure we can create the only one list.
+ */
+data class NavItemModal(
+    val tabParentView: LinearLayout,
+    val tabIconView: AppCompatImageView,
+    val tabInfoView: MaterialTextView,
+    val selectedIcon: Int,
+    val unselectedIcon: Int,
+    val screenView: Fragment
+)
