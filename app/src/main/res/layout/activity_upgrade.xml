@@ -3,8 +3,251 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
     android:layout_height="match_parent"
+    android:background="@color/white"
+
     tools:context=".screen.upgrade_section.UpgradeActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:paddingTop="@dimen/_20sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivClose"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/ic_close_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAppIcon"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_update_icon_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivClose" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_app_icon_light"
+                app:layout_constraintBottom_toBottomOf="@id/ivAppIcon"
+                app:layout_constraintEnd_toEndOf="@id/ivAppIcon"
+                app:layout_constraintStart_toStartOf="@id/ivAppIcon"
+                app:layout_constraintTop_toTopOf="@id/ivAppIcon" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPremium"
+                style="@style/TutorialMidTitle"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="start"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="0dp"
+                android:text="@string/premium"
+                android:textColor="@color/app_color"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivAppIcon"
+                app:layout_constraintTop_toTopOf="@id/ivAppIcon" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TutorialSmallTitle"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="start"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="0dp"
+                android:text="@string/premium_info"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivAppIcon"
+                app:layout_constraintTop_toBottomOf="@id/tvPremium" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPremiumInfo"
+                style="@style/TutorialMidTitle"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="start"
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="@string/premium_info_2"
+                android:textColor="#80000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/ivAppIcon"
+                app:layout_constraintTop_toBottomOf="@id/ivAppIcon" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rlUpgradeItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.509"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPremiumInfo"
+                app:layout_constraintVertical_bias="0.0"
+                tools:itemCount="15"
+                tools:listitem="@layout/item_permission_ask" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tutorial_color"
+        android:padding="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clUpgrade"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="@dimen/_10sdp"
+            android:background="@drawable/bg_premium_view"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPremiumView"
+                style="@style/TutorialMidTitle"
+                android:text="@string/premium"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPrice"
+                style="@style/TutorialMidTitle"
+                android:text="@string/dummy_price"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20ssp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintVertical_bias="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tvPremiumViewInfo"
+                app:layout_constraintTop_toBottomOf="@id/tvPremiumView" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPremiumViewInfo"
+                style="@style/TutorialSmallTitle"
+                android:text="@string/premium_info"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvUpgrade"
+                style="@style/TutorialMidTitle"
+                android:text="@string/upgrade"
+                android:textColor="@color/app_color"
+                android:fontFamily="@font/poppins_semibold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    <androidx.appcompat.widget.AppCompatImageView-->
+    <!--        android:id="@+id/ivClose"-->
+    <!--        android:layout_width="@dimen/_25sdp"-->
+    <!--        android:layout_height="@dimen/_25sdp"-->
+    <!--        android:src="@drawable/ic_close_dark"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+
+    <!--    <androidx.appcompat.widget.AppCompatImageView-->
+    <!--        android:id="@+id/ivAppIcon"-->
+    <!--        android:layout_width="@dimen/_50sdp"-->
+    <!--        android:layout_height="@dimen/_50sdp"-->
+    <!--        android:layout_marginTop="@dimen/_10sdp"-->
+    <!--        android:background="@drawable/bg_update_icon_logo"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/ivClose"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        />-->
+
+    <!--    <androidx.appcompat.widget.AppCompatImageView-->
+    <!--        android:id="@+id/ivIcon"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:src="@drawable/ic_app_icon_light"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/ivAppIcon"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/ivAppIcon"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/ivAppIcon"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/ivAppIcon"/>-->
+
+    <!--    <com.google.android.material.textview.MaterialTextView-->
+    <!--        android:id="@+id/tvPremium"-->
+    <!--        style="@style/TutorialMidTitle"-->
+    <!--        android:text="@string/premium"-->
+    <!--        android:textColor="@color/app_color"-->
+    <!--        android:gravity="start"-->
+    <!--        android:textSize="@dimen/_18ssp"-->
+    <!--        android:paddingStart="@dimen/_10sdp"-->
+    <!--        android:paddingEnd="0dp"-->
+    <!--        android:fontFamily="@font/poppins_bold"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/ivAppIcon"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/ivAppIcon"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+
+    <!--    <com.google.android.material.textview.MaterialTextView-->
+    <!--        style="@style/TutorialSmallTitle"-->
+    <!--        android:text="@string/premium_info"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        android:gravity="start"-->
+    <!--        android:paddingStart="@dimen/_10sdp"-->
+    <!--        android:paddingEnd="0dp"-->
+    <!--        android:fontFamily="@font/poppins_semibold"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tvPremium"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/ivAppIcon"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+
+
+    <!--    <com.google.android.material.textview.MaterialTextView-->
+    <!--        android:id="@+id/tvPremiumInfo"-->
+    <!--        style="@style/TutorialMidTitle"-->
+    <!--        android:text="@string/premium_info_2"-->
+    <!--        android:textColor="#80000000"-->
+    <!--        android:gravity="start"-->
+    <!--        android:paddingStart="0dp"-->
+    <!--        android:paddingEnd="0dp"-->
+    <!--        android:lineSpacingExtra="@dimen/_2sdp"-->
+    <!--        android:fontFamily="@font/poppins_semibold"-->
+    <!--        android:layout_marginTop="@dimen/_25sdp"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/ivAppIcon"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/ivAppIcon"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/rlUpgradeItems"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        tools:itemCount="5"-->
+    <!--        tools:listitem="@layout/item_permission_ask"-->
+    <!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tvPremiumInfo"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

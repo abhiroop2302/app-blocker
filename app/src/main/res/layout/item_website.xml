@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:strokeColor="#40000000"
+    app:cardBackgroundColor="@color/white"
+    app:strokeWidth="1dp"
+    android:layout_marginVertical="@dimen/_5sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_20sdp"
+        android:paddingHorizontal="@dimen/_15sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivWebsite"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_website_selected"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvWebsiteName"
+            app:layout_constraintBottom_toBottomOf="@id/tvWebsiteName"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOther"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/ic_close_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvWebsiteName"
+            app:layout_constraintBottom_toBottomOf="@id/tvWebsiteName"/>
+
+
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWebsiteName"
+            style="@style/TutorialMidTitle"
+            android:text="@string/dummy_permission_name"
+            android:textColor="@color/black"
+            android:gravity="start"
+            android:paddingStart="0dp"
+            android:paddingTop="@dimen/_2sdp"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:paddingEnd="0dp"
+            android:textSize="@dimen/_11ssp"
+            android:singleLine="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivWebsite"
+            app:layout_constraintEnd_toStartOf="@id/ivEnable"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

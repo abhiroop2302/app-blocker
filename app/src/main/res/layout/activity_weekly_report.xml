@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".screen.reports_section.ReportsFragment">
+
+    <include
+        android:id="@+id/appBar"
+        layout="@layout/blocked_notification_app_bar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/clNotEmptySection"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_25sdp"
+            android:paddingBottom="@dimen/_25sdp">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinnerOptions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="@drawable/bg_item_spinner"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTotalUsage"
+                style="@style/TutorialMidTitle"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="start"
+                android:text="@string/total_usage"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@id/tvDailyAverageUsage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinnerOptions" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTotalUsageTime"
+                style="@style/TutorialLargeTitle"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="@string/dummy_total_usage"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTotalUsage" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDailyAverageUsage"
+                style="@style/TutorialMidTitle"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="start"
+                android:text="@string/total_usage_daily"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvTotalUsage"
+                app:layout_constraintTop_toBottomOf="@id/spinnerOptions" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDailyAverageUsageTime"
+                style="@style/TutorialLargeTitle"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="@string/dummy_total_usage"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintStart_toStartOf="@id/tvDailyAverageUsage"
+                app:layout_constraintTop_toBottomOf="@id/tvDailyAverageUsage" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTopApps"
+                style="@style/TutorialMidTitle"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/top_apps"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDailyAverageUsageTime" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAllApps"
+                style="@style/TutorialMidTitle"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:text="@string/view_apps"
+                android:textColor="@color/app_color"
+                app:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/tvTopApps"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvTopApps"
+                app:strokeColor="#33000000"
+                app:strokeWidth="1dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rlApps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTopApps"
+                tools:itemCount="5"
+                tools:layout_editor_absoluteX="-141dp"
+                tools:listitem="@layout/item_app_usage_info" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvIncrease"
+                style="@style/TutorialMidTitle"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="start"
+                android:text="@string/top_increase"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@id/tvDecrease"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rlApps" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rlAppIncrease"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_10sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/tvIncrease"
+                app:layout_constraintStart_toStartOf="@id/tvIncrease"
+                app:layout_constraintTop_toBottomOf="@id/tvIncrease"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_top_increase" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDecrease"
+                style="@style/TutorialMidTitle"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="start"
+                android:text="@string/top_decrease"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvIncrease"
+                app:layout_constraintTop_toBottomOf="@id/rlApps" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rlAppDecrease"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_10sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/tvDecrease"
+                app:layout_constraintStart_toStartOf="@id/tvDecrease"
+                app:layout_constraintTop_toBottomOf="@id/tvDecrease"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_top_increase" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvLaunchesBlocked"
+                style="@style/TutorialMidTitle"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="start"
+                android:text="@string/app_launches_blocked"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@id/tvNotificationBlocked"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rlAppIncrease" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvNotificationBlocked"
+                style="@style/TutorialMidTitle"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="start"
+                android:text="@string/blocked_notification_count"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvLaunchesBlocked"
+                app:layout_constraintTop_toBottomOf="@id/rlAppDecrease" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAppLaunchedBlockedCount"
+                style="@style/TutorialLargeTitle"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="@string/dummy_total_usage"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLaunchesBlocked" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvNotificationBlockedCount"
+                style="@style/TutorialLargeTitle"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="@string/dummy_total_usage"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintStart_toStartOf="@id/tvNotificationBlocked"
+                app:layout_constraintTop_toBottomOf="@id/tvNotificationBlocked" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvUsagePerDay"
+                style="@style/TutorialMidTitle"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="start"
+                android:text="@string/usage_per_day"
+                android:textColor="#80000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAppLaunchedBlockedCount" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvNotes"
+                style="@style/TutorialMidTitle"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="start"
+                android:text="@string/notes"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUsagePerDay" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:boxBackgroundColor="#FDFDF5"
+                app:counterEnabled="true"
+                app:counterMaxLength="500"
+                app:counterOverflowTextAppearance="@color/permission_button_color"
+                app:layout_constraintTop_toBottomOf="@id/tvNotes"
+                app:layout_constraintStart_toStartOf="@id/tvNotes"
+                app:layout_constraintEnd_toEndOf="@id/tvNotes">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNotes"
+                    android:hint="@string/dummy_notes"
+                    android:textColor="@color/black"
+                    style="@style/TutorialMidTitle"
+                    android:layout_width="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

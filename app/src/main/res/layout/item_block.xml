@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_15sdp"
+    android:layout_marginVertical="@dimen/_10sdp"
+    android:outlineSpotShadowColor="@color/white"
+    android:elevation="@dimen/_50sdp"
+    app:strokeColor="#1A000000"
+    app:strokeWidth="1dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/vDivider"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="0dp"
+            android:background="@color/tutorial_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBlockInfo"
+            style="@style/TutorialLargeTitle"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            app:drawableTopCompat="@drawable/ic_nav_lock_unselected"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintTop_toTopOf="@id/vDivider"
+            app:layout_constraintBottom_toBottomOf="@id/vDivider"
+            app:layout_constraintStart_toStartOf="@id/vDivider"
+            app:layout_constraintEnd_toEndOf="@id/vDivider"
+            android:text="@string/dummy_block_time" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/vDivider"
+            app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTitle"
+                style="@style/TutorialMidTitle"
+                android:text="@string/block_item_title"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:gravity="start"
+                android:singleLine="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ivMore"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMore"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_more"
+                app:layout_constraintTop_toTopOf="@id/tvTitle"
+                app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+                app:layout_constraintEnd_toEndOf="parent"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvBlockItemState"
+                style="@style/TutorialMidTitle"
+                android:text="@string/active"
+                android:textColor="@color/black"
+                android:alpha="0.5"
+                android:gravity="start"
+                android:paddingStart="0dp"
+                android:textSize="@dimen/_10ssp"
+                android:paddingEnd="0dp"
+                android:singleLine="true"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintEnd_toEndOf="@id/tvTitle"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvExtraInfo"
+                style="@style/TutorialMidTitle"
+                android:text="@string/extra_info"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:textSize="@dimen/_10ssp"
+                android:singleLine="true"
+                app:layout_constraintTop_toBottomOf="@id/tvBlockItemState"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintEnd_toEndOf="@id/tvTitle"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rlApps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_apps_block_section"
+                android:layout_marginTop="@dimen/_10sdp"
+                tools:itemCount="8"
+                app:spanCount="8"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tvExtraInfo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvWebsite"
+                style="@style/TutorialMidTitle"
+                android:text="@string/dummy_website"
+                android:textColor="@color/black"
+                android:gravity="start"
+                app:drawableStartCompat="@drawable/ic_website_unselected"
+                android:drawablePadding="@dimen/_5sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:textSize="@dimen/_10ssp"
+                android:paddingStart="0dp"
+                android:visibility="gone"
+                android:paddingEnd="0dp"
+                android:singleLine="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rlApps"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvExtend"
+                style="@style/TutorialMidTitle"
+                android:text="@string/extend"
+                android:textColor="@color/app_color"
+                android:background="@drawable/bg_item_multiple_days"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintTop_toBottomOf="@id/tvWebsite"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvStop"
+                style="@style/TutorialMidTitle"
+                android:text="@string/pause"
+                android:textColor="@color/app_color"
+                android:background="@drawable/bg_item_multiple_days"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintTop_toBottomOf="@id/tvWebsite"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

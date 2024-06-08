@@ -28,5 +28,172 @@
     <string name="help"><![CDATA[Help & FAQ]]></string>
     <string name="translate">Help Translate</string>
     <string name="settings">Settings</string>
+    <string name="permission_view_title">Permission Needed</string>
+    <string name="permission_view_sub_title">Needed for blocking apps, websites, notifications, and displaying your apps usage.</string>
+    <string name="give_permission">Give Permission</string>
+    <string name="blocked_notification">Blocked Notifications</string>
+    <string name="empty_blocked_notification">No Blocked Notification</string>
+    <string name="empty_blocked_notification_sub_info">Block Notification will show up here.</string>
+    <string name="empty_block">No Blocks</string>
+    <string name="empty_block_sub_info">Create a new block by pressing the + button</string>
+    <string name="empty_reports">No Reports</string>
+    <string name="empty_report_sub_info">Come back next Monday for your\n first app usage report.</string>
+    <string name="empty_archive">Empty Archive</string>
+    <string name="empty_archive_sub_info">Archive blocks will show up here.</string>
+    <string name="dummy_permission_name">Notification Access</string>
+    <string name="dummy_notification_permission_desc">To count and block notifications,and keep the app alive while running in the background</string>
+    <string name="enable">Enable</string>
+    <string name="dummy_info">No data is collected from these permissions\n<font color="#80000000">This data stays on your device and only used for the app functionality.</font></string>
+    <string name="save_time_info">"If this app has helped you to get more control over your phone usage, would you please consider returning a favour by giving rating on the play store?\n\nAnd if you think there is anything that can be improved please let us know by sending us an email "</string>
+    <string name="cancel">Cancel</string>
+    <string name="rate">Rate</string>
+    <string name="feedback">Send Feedback</string>
+    <string name="premium">Premium</string>
+    <string name="premium_info">One-time purchase, never expires.</string>
+    <string name="premium_info_2"><font color="#000000">Unlock all features below...</font>\n<small>...and support the developer of this app\n</small></string>
+    <string name="dummy_price">Rs.300.00</string>
+    <string name="troubleshooting">Troubleshooting</string>
+    <string name="miui_permission"><font color="#000000">MIUI pop-up window permission</font>\n<small>Please give Display pop-up windows permission,this is needed in MIUI devices to block apps.</small></string>
+    <string name="foreground_service_alive"><font color="#000000">Keep foreground service alive</font>\n<small>Enable this if your blocks don\'t activate automatically.\n</small></string>
+    <string name="app_not_working"><font color="#000000">App not working?</font>\n<small>It is likely that your device stopping the app while it is running in the background.Please Press here and follow the solution for your device.</small></string>
+    <string name="report_bug">Report a bug</string>
+    <string name="strict_block">Strict Blocking</string>
+    <string name="device_reboot"><font color="#000000">Keep blocks and limit active after device reboot</font>\n<small>When disabled, blocks and limits will only activate at their next starting time after the reboot or after opening this app.</small></string>
+    <string name="prevent_uninstall"><font color="#000000">Prevent uninstallation</font>\n<small>Enable device administrator to prevent the app from being uninstalled.</small></string>
+    <string name="pause_delay"><font color="#000000">Pause delay</font>\n<small>Amount of time to wait before you can pause a block(5 seconds)</small></string>
+    <string name="pin_code_setup">Enable PIN to open this app</string>
+    <string name="set_pin">Set a PIN Code</string>
+    <string name="title_pin_code">Pin Code</string>
+    <string name="start_week">Start of Week</string>
+    <string name="dummy_day">Sunday</string>
+    <string name="time">Time</string>
+    <string name="quotes">Quotes</string>
+    <string name="show_quote"><font color="#000000">Show quote at blocked app</font>\n<small>Show a random productivity quote when attempting to open a blocked app.</small></string>
+    <string name="custom_quote">Set a custom quote</string>
+    <string name="notification">Notifications</string>
+    <string name="usage_report"><font color="#000000">New usage report</font>\n<small>Receive notifications when a new usage report is ready.</small></string>
+    <string name="reminders">"<font color="#000000">Usage limit reminders</font>\n<small>Show usage limit reminder notification when an app reaching its usage limit.</small>"</string>
+    <string name="blocked_notification_info_text"><font color="#000000">Blocked notifications</font>\n<small>When a block ends, show a message if there were any notification blocked.</small></string>
+    <string name="language">Language</string>
+    <string name="change_language"><font color="#000000">Change language</font>\n<small>Change the language of the app</small></string>
+    <string name="translate_help"><font color="#000000">Help translate</font>\n<small>Looking for translators!</small></string>
+    <string name="other">Other</string>
+    <string name="hidden_usage"><font color="#000000">Hidden Usage</font>\n<small>Apps and websites excluded from usage </small></string>
+    <string name="export">Export usage data</string>
+    <string name="theme"><font color="#000000">Theme</font>\n<small>Enable or disable dark mode</small></string>
+    <string name="about">About</string>
+    <string name="share">Share</string>
+    <string name="miui_pop_up_window_permission">MIUI pop-up window permission</string>
+    <string name="miui_permission_info">"Please give Display pop-up window permission, this is needed in miui devices to block apps. "</string>
+    <string name="miui_permission_info_given">"Permissionn for Display pop-up window has been already given, do not show this message again. "</string>
+    <string name="name_block">Set name of block</string>
+    <string name="restriction_screen_title_1">Blocked apps and websites</string>
+    <string name="restriction_screen_title_2">Select what to block</string>
+    <string name="restriction_screen_title_3"><font color="#000000">Restriction</font>\n<small>Configure rules when apps should be blocked</small></string>
+    <string name="restriction_screen_title_4"><font color="#F27DA368">Add Restriction</font>\n\n<small>Create a schedules, set usage limits, or leave empty to manually start the block</small></string>
+    <string name="restriction_screen_title_5">Strictness</string>
+    <string name="restriction_screen_title_6"><font color="#000000">Enable strict mode</font>\n<small>you won\'t be able to stop the block while restriction is active.</small></string>
+    <string name="restriction_screen_title_7">What to block</string>
+    <string name="restriction_screen_title_8">App launch</string>
+    <string name="done">Done</string>
+    <string name="hourly">Hourly</string>
+    <string name="daily">Daily</string>
+    <string name="daily_usage_limit">Daily usage limit</string>
+    <string name="no_limit">No limit</string>
+    <string name="dummy_time">12 hrs 31 min</string>
+    <string name="set_multiple_days">Set multiple days</string>
+    <string name="app_nav_bar_title_1">Apps</string>
+    <string name="app_nav_bar_title_2">Website</string>
+    <string name="app_nav_bar_title_3">Keywords</string>
+    <string name="apps_list_title_1">Select apps to block</string>
+    <string name="app_fragment_title_1">Search for apps</string>
+    <string name="dummy_app_name">Instagram</string>
+    <string name="website_list_title_1">Website to block</string>
+    <string name="website_fragment_title_1">Add website e.g www.google.com</string>
+    <string name="keyword_list_title_1"><font color="#000000">Keywords to block</font>\n<small>Block any website containing the keyword in its URL</small></string>
+    <string name="keyword_fragment_title_1">Add url keyword e.g game</string>
+    <string name="set_usage_limit">Set usage limit</string>
+    <string name="usage_per_hour">Maximum usage per hour</string>
+    <string name="dummy_hourly_time_selected">30 min</string>
+    <string name="dummy_start_hourly_time">0m</string>
+    <string name="dummy_start_hourly_time_1">1h</string>
+    <string name="dummy_time_1">-10</string>
+    <string name="dummy_time_2">-1</string>
+    <string name="dummy_time_3">+1</string>
+    <string name="dummy_time_4">+10</string>
+    <string name="okay">OK</string>
+    <string name="dummy_start_hourly_time_2">1m</string>
+    <string name="dummy_start_hourly_time_3">24h</string>
+    <string name="sunday_symbol">S</string>
+    <string name="monday_symbol">M</string>
+    <string name="wednesday_symbol">W</string>
+    <string name="thursday_symbol">T</string>
+    <string name="friday_symbol">F</string>
+    <string name="saturday_symbol">S</string>
+    <string name="tuesday_symbol">T</string>
+    <string name="days_following">On the following days</string>
+    <string name="dummy_start_pause_delay1">1s</string>
+    <string name="dummy_start_pause_delay2">10m</string>
+    <string name="save">Save</string>
+    <string name="pause_delay_title">Pause Delay</string>
+    <string name="pause_delay_title_1">Amount of time to wait before you can pause a block</string>
+    <string name="report_bug_text_1">Please describe the issue here</string>
+    <string name="report_bug_text_2">Select what information to include \n<small>This will only be used to help solve the issue</small></string>
+    <string name="report_bug_text_3">Send logs, device info, and app settings\n(including configured blocks and limits)</string>
+    <string name="report_bug_text_4">Send app usage data provided by the Android system. App IDs and website URLs get replaced with non-identifying numbers in the updated report.</string>
+    <string name="send_report">Send report</string>
+    <string name="block_item_title">Block Section</string>
+    <string name="never_active">Never active (archived)</string>
+    <string name="unarchived">Unarchived</string>
+    <string name="dummy_website">www.google.com</string>
+    <string name="dummy_block_time">30m</string>
+    <string name="active">Activated until 8 pm</string>
+    <string name="extra_info">Block until 8:30pm</string>
+    <string name="pause">Pause</string>
+    <string name="extend">Extend until</string>
+    <string name="active_section">Active Blocks</string>
+    <string name="unactive_section">Not Active Blocks</string>
+    <string name="app_stats">App stats</string>
+    <string name="times_blocked">Times blocked</string>
+    <string name="dummy_counter">0</string>
+    <string name="app_restriction">App Restriction</string>
+    <string name="restriction_msg">Create a schedule to block this app or set an hourly or daily usage limit.</string>
+    <string name="hide_usage">Hide Usage</string>
+    <string name="uninstall">Uninstall</string>
+    <string name="app_not_working_title">App is not working?</string>
+    <string name="faq_point_1">Are blocks and limits not activated automatically? It is likely that the app is being killed in the background on your device. Some device manufacturers (e.g. Huawei and Xiaomi) have modified their Android system to kill apps more aggressively, and unfortunately the app cannot prevent tis by itself. Please follow the solutions below to prevent your device from killing the app.</string>
+    <string name="solution">Solution for your device</string>
+    <string name="faq_point_2_title">How can I prevent myself from uninstalling the app?</string>
+    <string name="faq_point_2_desc">Go to the Settings within this app, and press the option to enable the Device Administrator permission to prevent the app from being uninstalled.</string>
+    <string name="faq_point_3_title">I\'ve lost my Premium upgrade after the app was updated, how can i restore?</string>
+    <string name="faq_point_3_desc">This is likely due to having multiple Google accounts logged into the Play Store on your device, unfortunately there is an issue with Google Play that can cause the purchase to become invisible to the app after an update. To fix this, please try the following steps\n\n<b>Fix A(only works if the account used to make the purchase is the \"primary\" account on the device):</b>\n\n- Clear the data of the Google Play Store app\n\n- Open the Google Play Store app and accept the terms\n\n- Open this app, it should automatically detect the upgrade again. Otherwise, try Fix B below.\n\n<b>Fix B:</b>\n\n- Uninstall this app\n\n- Open the Google Play Store and switch to the sccount you made the purchase from\n\n- Download and open this app again\n\nIf neither works, please send me an email with your order ID (found in the receipt sent by Google when you made hte purchase)</string>
+    <string name="faq_point_4_title">My block is active, but I can still access my blocked apps?</string>
+    <string name="faq_point_4_desc">First check whether you have given the right permission (there should not be a prompt on the home screen of this app asking for permission). Also check the troubleshooting steps for your device (found in the app settings), It is possible your device is killing the app in the background. In case apps are still not blocked after the permission is given, pleaswe send me an email with information about your block and which apps can still be accessed.</string>
+    <string name="faq_point_5_title">How do I keep blocks and limits activated after a device reboot?</string>
+    <string name="faq_point_5_desc">You can go to the app settings and enable blocks being restarted after a reboot. Careful though, as rebooting is the only built-in option to stop any active (strict) blocks. There is no other way to stop a block onec it is active.</string>
+    <string name="faq_point_6_title">Why do I see the system notification \"Block is running in the background\"?</string>
+    <string name="faq_point_6_desc">Since Android O, the system will place this notification when the app has an active service running in the background. The app needs thsi service to detect which app has been opened by you(and block if necessary), but this requires almost no work in the background. When you switch off your screen this detection will pause until you switch the screen back on agian, so overall you should not see any noticeable decrease in battery life. Unfortunately, it is not possible to turn off this notification from within the app, but there exist some apps that will hide this notification for you in the Play Store.</string>
+    <string name="faq_point_7_title">How do I stop an active block?</string>
+    <string name="faq_point_7_desc">If strict mode isn\'t enabled, you can pause or edit the restrictions to diable and active block. Otherwise, in the case you really need to use an app while strict mode is enabled, you can restart your phone to stop all active blocks. If you have not disabled this in the settings. Before you do that, please remind yourself why you started the block and whether you really cannot do without that app right now.</string>
+    <string name="faq_point_8_title">Why can\'t I find app X to add to my block?</string>
+    <string name="faq_point_8_desc">For emergency reasons, apps from which you can make calls have been excluded. Similarly, \"Launchers\" apps are also not supported, as they might introduce the infinite blocking messages loops. Let me know if you think your app should be able to be blocked by sending an email.</string>
+    <string name="total_usage">Total Usage</string>
+    <string name="total_usage_daily">Daily average</string>
+    <string name="dummy_total_usage">33h 35m</string>
+    <string name="top_apps">Top 5 apps</string>
+    <string name="view_apps">View all apps</string>
+    <string name="top_increase">Top increase</string>
+    <string name="top_decrease">Top decrease</string>
+    <string name="app_launches_blocked">App launches blocked</string>
+    <string name="blocked_notification_count">Notification blocked count</string>
+    <string name="usage_per_day"><font color ="#000000">Usage per day</font>\n<small>Tap on the bar to see your app usage on that day</small></string>
+    <string name="notes">Notes</string>
+    <string name="dummy_notes">Add notes to your weekly usage report</string>
+    <string name="close">Close</string>
+    <string name="dummy_report">19 May - 26 May 2024</string>
+    <string name="dummy_report_time">33h33m</string>
+    <string name="dummy_block_counter">3</string>
+    <string name="blocked">Blocked</string>
+    <string name="hourly_limit">Hourly usage limit</string>
 
 </resources>

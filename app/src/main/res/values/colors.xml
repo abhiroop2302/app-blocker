@@ -6,4 +6,7 @@
     <color name="tutorial_color">#B7D8AA</color>
     <color name="add_color">#A64CBB1B</color>
     <color name="bottom_nav_bar_background_color">#B3FFFFFF</color>
+    <color name="permission_back">#FFDAD7</color>
+    <color name="permission_button_color">#BA1A1A</color>
+
 </resources>

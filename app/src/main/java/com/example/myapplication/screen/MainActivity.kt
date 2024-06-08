@@ -17,7 +17,7 @@ import com.example.myapplication.screen.notification_section.BlockedNotification
 import com.example.myapplication.screen.settings_section.SettingsActivity
 import com.example.myapplication.screen.upgrade_section.UpgradeActivity
 import com.example.myapplication.utility.setStatusBar
-import kotlinx.coroutines.selects.SelectInstance
+
 
 class MainActivity :
     AppCompatActivity(),
@@ -41,7 +41,6 @@ class MainActivity :
         setContentView(binding.root)
         initialize()
     }
-
     /**
      *  here we will initialize the different managers for the main screen.
      */

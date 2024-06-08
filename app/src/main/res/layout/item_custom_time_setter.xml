@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTime1"
+        style="@style/TutorialSmallTitle"
+        android:text="@string/dummy_time_1"
+        android:textColor="@color/app_color"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvTime2"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTime2"
+        style="@style/TutorialSmallTitle"
+        android:text="@string/dummy_time_2"
+        android:textColor="@color/app_color"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvTime1"
+        app:layout_constraintEnd_toStartOf="@id/tvTime3"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTime3"
+        style="@style/TutorialSmallTitle"
+        android:text="@string/dummy_time_3"
+        android:textColor="@color/app_color"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvTime2"
+        app:layout_constraintEnd_toStartOf="@id/tvTime4"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTime4"
+        style="@style/TutorialSmallTitle"
+        android:text="@string/dummy_time_4"
+        android:textColor="@color/app_color"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvTime3"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

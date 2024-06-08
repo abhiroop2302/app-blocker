@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/_20sdp"
+    android:layout_margin="@dimen/_5sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_saving_time_dialog">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTitle"
+        style="@style/TutorialMidTitle"
+        android:text="@string/save_time"
+        android:textColor="@color/black"
+        android:gravity="start"
+        android:textSize="@dimen/_18ssp"
+        android:background="@drawable/bg_saving_time_title"
+        android:paddingVertical="@dimen/_12sdp"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvSubTitle"
+        style="@style/TutorialMidTitle"
+        android:text="@string/save_time_info"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <include
+        android:id="@+id/iRatingBar"
+        layout="@layout/item_rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@id/tvSubTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvCancel"
+        style="@style/TutorialMidTitle"
+        android:layout_width="wrap_content"
+        android:text="@string/cancel"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/tutorial_color"
+        android:paddingVertical="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_semibold"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvFeedback"
+        app:layout_constraintTop_toBottomOf="@id/iRatingBar"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvFeedback"
+        style="@style/TutorialMidTitle"
+        android:layout_width="wrap_content"
+        android:text="@string/feedback"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/tutorial_color"
+        android:paddingVertical="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_semibold"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintStart_toEndOf="@id/tvCancel"
+        app:layout_constraintEnd_toStartOf="@id/tvRate"
+        app:layout_constraintTop_toBottomOf="@id/iRatingBar"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvRate"
+        style="@style/TutorialMidTitle"
+        android:layout_width="wrap_content"
+        android:text="@string/rate"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/tutorial_color"
+        android:paddingVertical="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_semibold"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintStart_toEndOf="@id/tvFeedback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iRatingBar"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

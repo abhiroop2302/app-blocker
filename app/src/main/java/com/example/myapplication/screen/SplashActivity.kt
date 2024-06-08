@@ -22,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun navigate() {
         Handler().postDelayed(Runnable {
-         startActivity(Intent(this, TutorialsActivity::class.java))
+         startActivity(Intent(this, MainActivity::class.java))
          finish()
         },Constants.SPLASH_TIME_OUT)
     }

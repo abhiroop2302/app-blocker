@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="#F6F8ED"
+    android:layout_margin="@dimen/_10sdp"
+    android:outlineSpotShadowColor="@color/white"
+    app:strokeColor="#1A000000"
+    app:strokeWidth="1dp"
+    android:elevation="@dimen/_50sdp"
+    app:cardCornerRadius="@dimen/_10sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_15sdp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTitle"
+            style="@style/TutorialMidTitle"
+            android:text="@string/dummy_report"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:gravity="start"
+            android:singleLine="true"
+            app:layout_constraintEnd_toStartOf="@id/tvTotalUsageTime"
+            app:layout_constraintTop_toTopOf="@id/tvTotalUsageTime"
+            app:layout_constraintBottom_toBottomOf="@id/tvTotalUsageTime"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTotalUsageTime"
+            style="@style/TutorialMidTitle"
+            android:text="@string/dummy_report_time"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"
+            android:paddingStart="0dp"
+            android:textSize="@dimen/_17ssp"
+            android:paddingEnd="0dp"
+            android:gravity="end"
+            android:singleLine="true"
+            app:layout_constraintStart_toEndOf="@id/tvTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBlockedCount"
+            style="@style/TutorialMidTitle"
+            android:gravity="start"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:singleLine="true"
+            app:drawableEndCompat="@drawable/ic_nav_lock_unselected"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/dummy_block_counter"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            android:drawablePadding="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rlApps" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBlocked"
+            style="@style/TutorialMidTitle"
+            android:gravity="start"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:singleLine="true"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:text="@string/blocked"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBlockedCount" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rlApps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.589"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalUsageTime"
+            app:spanCount="10"
+            tools:itemCount="7"
+            tools:listitem="@layout/item_apps_block_section" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

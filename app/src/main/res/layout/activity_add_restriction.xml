@@ -7,4 +7,346 @@
     android:background="@color/white"
     tools:context=".screen.add_block_section.AddRestrictionActivity">
 
+    <include
+        android:id="@+id/appBar"
+        layout="@layout/add_restriction_app_bar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_80sdp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvBlockApps"
+                style="@style/TutorialMidTitle"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/restriction_screen_title_1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clApps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_restriction_screen_view"
+                android:paddingVertical="@dimen/_15sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvBlockApps">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_menu_light"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TutorialMidTitle"
+                    android:text="@string/restriction_screen_title_2"
+                    android:textColor="@color/app_color"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:gravity="start"
+                    android:fontFamily="@font/poppins_semibold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivMenu"
+                    app:layout_constraintEnd_toStartOf="@id/ivMore"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivMore"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ic_more_dark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvRestriction"
+                style="@style/TutorialMidTitle"
+                android:textColor="#80000000"
+                android:gravity="start"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/restriction_screen_title_3"
+                app:layout_constraintTop_toBottomOf="@id/clApps"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <include
+                android:id="@+id/iHours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/item_hourly_limit"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvRestriction"/>
+
+            <include
+                android:id="@+id/iDaily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/item_hourly_limit"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iHours"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clAddRestriction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/bg_restriction_screen_view"
+                android:paddingVertical="@dimen/_15sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iDaily">
+
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_menu_light"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TutorialMidTitle"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:text="@string/restriction_screen_title_4"
+                    android:textColor="#80000000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/ivHourGlass"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.487" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivHourGlass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_more_dark"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    app:layout_constraintStart_toEndOf="@id/ivClock"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvStrictness"
+                style="@style/TutorialMidTitle"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/restriction_screen_title_5"
+                app:layout_constraintTop_toBottomOf="@id/clAddRestriction"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clStrictness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_restriction_screen_view"
+                android:paddingVertical="@dimen/_15sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvStrictness">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivLock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_menu_light"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvEnableStrictMode"
+                    style="@style/TutorialMidTitle"
+                    android:text="@string/restriction_screen_title_6"
+                    android:textColor="#80000000"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/poppins_semibold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivLock"
+                    app:layout_constraintEnd_toStartOf="@id/checkbox"/>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbox"
+                    style="@style/TutorialMidTitle"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="0dp"
+                    app:buttonTint="@color/app_color"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingEnd="0dp"
+                    android:gravity="top"
+                    app:layout_constraintBottom_toBottomOf="@id/tvEnableStrictMode"
+                    app:layout_constraintTop_toTopOf="@id/tvEnableStrictMode"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivOther"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_more_dark"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvWhatToBLock"
+                style="@style/TutorialMidTitle"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/restriction_screen_title_7"
+                app:layout_constraintTop_toBottomOf="@id/clStrictness"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAppLaunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/ic_pinch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvWhatToBLock"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAppLaunch"
+                style="@style/TutorialMidTitle"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:textSize="@dimen/_11ssp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/restriction_screen_title_8"
+                app:layout_constraintTop_toBottomOf="@id/tvWhatToBLock"
+                app:layout_constraintEnd_toStartOf="@id/appLaunchCheckBox"
+                app:layout_constraintStart_toEndOf="@id/ivAppLaunch"/>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/appLaunchCheckBox"
+                style="@style/TutorialMidTitle"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="0dp"
+                app:buttonTint="@color/app_color"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingEnd="0dp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:gravity="top"
+                app:layout_constraintBottom_toBottomOf="@id/tvAppLaunch"
+                app:layout_constraintTop_toTopOf="@id/tvAppLaunch"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/ic_notify"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAppLaunch"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvNotification"
+                style="@style/TutorialMidTitle"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:textSize="@dimen/_11ssp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/notification"
+                app:layout_constraintTop_toBottomOf="@id/ivAppLaunch"
+                app:layout_constraintEnd_toStartOf="@id/notificationCheckBox"
+                app:layout_constraintStart_toEndOf="@id/ivAppLaunch"/>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/notificationCheckBox"
+                style="@style/TutorialMidTitle"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="0dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingEnd="0dp"
+                app:buttonTint="@color/app_color"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:gravity="top"
+                app:layout_constraintBottom_toBottomOf="@id/tvNotification"
+                app:layout_constraintTop_toTopOf="@id/tvNotification"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDone"
+        style="@style/TutorialMidTitle"
+        android:text="@string/done"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        app:backgroundTint="@color/app_color"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:gravity="center"
+        app:cornerRadius="@dimen/_10sdp"
+        android:paddingStart="@dimen/_30sdp"
+        android:paddingEnd="@dimen/_30sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

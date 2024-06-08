@@ -6,5 +6,47 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".screen.notification_section.BlockedNotificationActivity">
+    <include
+        android:id="@+id/appBar"
+        layout="@layout/blocked_notification_app_bar"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clEmptyView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivEmptyNotification"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/ic_notify"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvEmptyNotification"
+            style="@style/TutorialMidTitle"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/empty_blocked_notification"
+            android:textSize="@dimen/_16ssp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/ivEmptyNotification"
+            app:layout_constraintStart_toStartOf="@id/ivEmptyNotification"
+            app:layout_constraintEnd_toEndOf="@id/ivEmptyNotification"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvEmptyNotificationSubInfo"
+            style="@style/TutorialSmallTitle"
+            android:layout_width="0dp"
+            android:text="@string/empty_blocked_notification_sub_info"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvEmptyNotification"
+            app:layout_constraintStart_toStartOf="@id/tvEmptyNotification"
+            app:layout_constraintEnd_toEndOf="@id/tvEmptyNotification"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

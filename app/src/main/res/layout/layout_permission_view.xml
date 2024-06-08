@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_15sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_permission_view">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTitle"
+        style="@style/TutorialMidTitle"
+        android:text="@string/permission_view_title"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="start"
+        android:textSize="@dimen/_15ssp"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvSubTitle"
+        style="@style/TutorialMidTitle"
+        android:text="@string/permission_view_sub_title"
+        android:textColor="@color/black"
+        android:gravity="start"
+        android:textSize="@dimen/_10ssp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGivePermission"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="@string/give_permission"
+        app:icon="@drawable/ic_setting_light"
+        app:iconPadding="0dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingVertical="@dimen/_12sdp"
+        app:backgroundTint="@color/permission_button_color"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/tvSubTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

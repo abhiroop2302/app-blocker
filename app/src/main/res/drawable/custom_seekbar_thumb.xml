@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <size android:width="15dp"
+        android:height="15dp"/>
+    <stroke android:color="#1A000000" android:width="0.5dp"/>
+    <solid android:color="@color/tutorial_color" /> <!-- Thumb color -->
+</shape>

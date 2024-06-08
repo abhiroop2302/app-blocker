@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="#F6F8ED"
+    android:layout_margin="@dimen/_10sdp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#1A000000"
+    android:outlineSpotShadowColor="@color/white"
+    android:elevation="@dimen/_50sdp"
+    app:cardCornerRadius="@dimen/_10sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_15sdp">
+        
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTitle"
+            style="@style/TutorialMidTitle"
+            android:text="@string/block_item_title"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/black"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:gravity="start"
+            android:singleLine="true"
+            app:layout_constraintEnd_toStartOf="@id/ivDelete"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBlockItemState"
+            style="@style/TutorialMidTitle"
+            android:text="@string/never_active"
+            android:textColor="@color/black"
+            android:alpha="0.5"
+            android:gravity="start"
+            android:textSize="@dimen/_10ssp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:singleLine="true"
+            app:layout_constraintEnd_toStartOf="@id/ivDelete"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvUnarchived"
+            style="@style/TutorialMidTitle"
+            android:text="@string/unarchived"
+            android:textColor="@color/app_color"
+            android:background="@drawable/bg_item_multiple_days"
+            android:paddingVertical="@dimen/_5sdp"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintTop_toTopOf="@id/tvTitle"
+            app:layout_constraintBottom_toBottomOf="@id/tvBlockItemState"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintTop_toTopOf="@id/tvUnarchived"
+            app:layout_constraintBottom_toBottomOf="@id/tvUnarchived"
+            app:layout_constraintEnd_toStartOf="@id/tvUnarchived"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rlApps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_apps_block_section"
+            android:layout_marginTop="@dimen/_15sdp"
+            tools:itemCount="10"
+            app:spanCount="10"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/tvBlockItemState"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWebsite"
+            style="@style/TutorialMidTitle"
+            android:text="@string/dummy_website"
+            android:textColor="@color/black"
+            android:gravity="start"
+            app:drawableStartCompat="@drawable/ic_website_unselected"
+            android:drawablePadding="@dimen/_5sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:textSize="@dimen/_10ssp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintEnd_toStartOf="@id/ivDelete"
+            app:layout_constraintTop_toBottomOf="@id/rlApps"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -9,13 +9,22 @@
     <include
         android:id="@+id/appBar"
         layout="@layout/app_bar"/>
+    <include
+        android:id="@+id/permissionView"
+        layout="@layout/layout_permission_view"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_margin="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:name="com.example.myapplication.screen.block_section.BlockSectionFragment"
         tools:layout="@layout/fragment_block_section"
-        app:layout_constraintTop_toBottomOf="@id/appBar"
+        app:layout_constraintTop_toBottomOf="@id/permissionView"
         app:layout_constraintBottom_toTopOf="@id/bottomBar"/>
 
     <include
