@@ -10,12 +10,14 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/clUpgradeParent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/_20sdp"
+            android:paddingHorizontal="@dimen/_15sdp"
             android:paddingTop="@dimen/_20sdp">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -91,19 +93,19 @@
                 android:id="@+id/rlUpgradeItems"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.509"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvPremiumInfo"
-                app:layout_constraintVertical_bias="0.0"
                 tools:itemCount="15"
                 tools:listitem="@layout/item_permission_ask" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clUpgradeParent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/tutorial_color"

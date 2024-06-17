@@ -31,11 +31,9 @@
         <activity
             android:name=".screen.upgrade_section.UpgradeActivity"
             android:exported="false" />
+
         <activity
-            android:name=".screen.TutorialsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".screen.SplashActivity"
+            android:name=".screen.main.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.MyApplication">
             <intent-filter>
@@ -45,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".screen.MainActivity"
+            android:name=".screen.main.MainActivity"
             android:exported="false" />
 
         <meta-data

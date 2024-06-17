@@ -1,4 +1,4 @@
-package com.example.myapplication.screen
+package com.example.myapplication.screen.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

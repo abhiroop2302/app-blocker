@@ -50,7 +50,7 @@
     <string name="feedback">Send Feedback</string>
     <string name="premium">Premium</string>
     <string name="premium_info">One-time purchase, never expires.</string>
-    <string name="premium_info_2"><font color="#000000">Unlock all features below...</font>\n<small>...and support the developer of this app\n</small></string>
+    <string name="premium_info_2"><font color="#000000">Unlock all features below...</font>\n<small>...and support the developer of this app</small></string>
     <string name="dummy_price">Rs.300.00</string>
     <string name="troubleshooting">Troubleshooting</string>
     <string name="miui_permission"><font color="#000000">MIUI pop-up window permission</font>\n<small>Please give Display pop-up windows permission,this is needed in MIUI devices to block apps.</small></string>
@@ -195,5 +195,55 @@
     <string name="dummy_block_counter">3</string>
     <string name="blocked">Blocked</string>
     <string name="hourly_limit">Hourly usage limit</string>
+
+
+
+    <!-- upgraded feature listing strings   -->
+    <string-array name="upgrade_feature_name">
+        <item>No more Ads!</item>
+        <item>Unlimited blocks</item>
+        <item>Unlimited apps/websites per block</item>
+        <item>Block keywords</item>
+        <item>View all weekly usage reports</item>
+        <item>Unlock all usage graphs</item>
+        <item>Set app launch limits</item>
+        <item>View app open counts</item>
+        <item>View app notification counts</item>
+        <item>Block newly installed apps</item>
+        <item>View all blocked notifications</item>
+        <item>Export usage data</item>
+        <item>Home screen widgets</item>
+    </string-array>
+
+    <string-array name="upgrade_feature_desc">
+        <item>100% ad-free</item>
+        <item>Remove the 3 blocks limit</item>
+        <item>Remove the 6 per block limit</item>
+        <item>Block websites based on keywords</item>
+        <item>Instead of only last week\'s report</item>
+        <item>instead of only today\'s hourly usage graph</item>
+        <item>Limit number of app launches per hour or day</item>
+        <item>In addition to screen time</item>
+        <item>See number of the notifications received per app</item>
+        <item>Automatically add newly installed apps to your block</item>
+        <item>See the content of each notification</item>
+        <item>Export all app/website usage data by date as a JSON file</item>
+        <item>Start blocks in one tap using widgets</item>
+    </string-array>
+
+    <!-- permission needed array      -->
+    <string-array name="permission_name">
+        <item>Usage Access</item>
+        <item>Display over other apps</item>
+        <item>Notification Access</item>
+        <item>Accessibility</item>
+    </string-array>
+
+    <string-array name="permission_desc">
+        <item>To show and block app usage</item>
+        <item>To close and block apps</item>
+        <item>To count and block notifications,and keep the app alive while running in the background</item>
+        <item>To block websites and show website usage</item>
+    </string-array>
 
 </resources>

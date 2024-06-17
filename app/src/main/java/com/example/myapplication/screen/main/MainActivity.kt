@@ -1,4 +1,4 @@
-package com.example.myapplication.screen
+package com.example.myapplication.screen.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.myapplication.R
+import com.example.myapplication.abstract_managers.BaseRecyclerView
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.databinding.PopUpMenuBinding
 import com.example.myapplication.manager.AppBarManager
@@ -16,13 +17,13 @@ import com.example.myapplication.screen.faq_section.FAQActivity
 import com.example.myapplication.screen.notification_section.BlockedNotificationActivity
 import com.example.myapplication.screen.settings_section.SettingsActivity
 import com.example.myapplication.screen.upgrade_section.UpgradeActivity
+import com.example.myapplication.screen.upgrade_section.UpgradeFeatureRecyclerImplementor
 import com.example.myapplication.utility.setStatusBar
 
 
 class MainActivity :
     AppCompatActivity(),
-    NavigationManager.TabChangeListener
-    , AppBarManager.AppBarOptionListener{
+    NavigationManager.TabChangeListener, AppBarManager.AppBarOptionListener{
 
     init {
         instance = this
@@ -41,13 +42,14 @@ class MainActivity :
         setContentView(binding.root)
         initialize()
     }
+
     /**
      *  here we will initialize the different managers for the main screen.
      */
     private fun initialize() {
         appBarManager = AppBarManager(binding.appBar, this)
         popUpWindowManager = PopUpWindowManager(PopUpMenuBinding.inflate(layoutInflater), this)
-        navigationManager = NavigationManager(binding.bottomBar,supportFragmentManager, this)
+        navigationManager = NavigationManager(binding.bottomBar, supportFragmentManager, this)
     }
 
     /**
@@ -62,8 +64,8 @@ class MainActivity :
      *  callback option when user click on the different option from the app bar of the screen.
      */
     override fun onOptionClicked(navigator: AppBarManager.Navigator) {
-        val activity = when(navigator){
-            AppBarManager.Navigator.Upgrade ->  UpgradeActivity::class.java
+        val activity = when (navigator) {
+            AppBarManager.Navigator.Upgrade -> UpgradeActivity::class.java
             AppBarManager.Navigator.Setting -> SettingsActivity::class.java
             AppBarManager.Navigator.FAQ -> FAQActivity::class.java
             AppBarManager.Navigator.Notification -> BlockedNotificationActivity::class.java
@@ -93,7 +95,7 @@ class MainActivity :
      *  the context , so in that case , we will use the activity (parent activity ) there because fragment may not
      *  attached to context, but activity still alive there.
      */
-    companion object{
+    companion object {
         private lateinit var instance: MainActivity
         fun getInstance() = instance
     }
