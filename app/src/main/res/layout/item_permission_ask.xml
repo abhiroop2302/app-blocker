@@ -13,8 +13,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/_10sdp"
-        android:paddingHorizontal="@dimen/_15sdp">
+        android:paddingVertical="@dimen/_12sdp"
+        android:paddingHorizontal="@dimen/_12sdp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivPermissionIcon"
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:padding="@dimen/_2sdp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:src="@drawable/ic_settings_dark"
             app:layout_constraintEnd_toStartOf="@id/tvEnable"
             app:layout_constraintTop_toTopOf="@id/tvEnable"
@@ -44,7 +44,7 @@
             android:textColor="@color/app_color"
             android:paddingTop="@dimen/_2sdp"
             android:textSize="@dimen/_9ssp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:fontFamily="@font/poppins_semibold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/tvPermissionName"
@@ -72,14 +72,16 @@
             android:text="@string/dummy_notification_permission_desc"
             android:textColor="@color/black"
             android:fontFamily="@font/poppins_semibold"
+            android:layout_marginTop="@dimen/_2sdp"
             android:alpha="0.5"
             android:textSize="@dimen/_8ssp"
+            android:layout_marginEnd="@dimen/_5sdp"
             android:gravity="start"
             android:paddingStart="0dp"
             android:paddingEnd="0dp"
             app:layout_constraintTop_toBottomOf="@id/tvPermissionName"
             app:layout_constraintStart_toStartOf="@id/tvPermissionName"
-            app:layout_constraintEnd_toEndOf="@id/tvPermissionName"
+            app:layout_constraintEnd_toStartOf="@id/ivEnable"
             />
 
 

@@ -233,17 +233,21 @@
 
     <!-- permission needed array      -->
     <string-array name="permission_name">
+        <item>Post Notifications</item>
         <item>Usage Access</item>
         <item>Display over other apps</item>
         <item>Notification Access</item>
         <item>Accessibility</item>
+        <item>Exact Alarms</item>
     </string-array>
 
     <string-array name="permission_desc">
+        <item>When reaching usage limits and for weekly usage reports</item>
         <item>To show and block app usage</item>
         <item>To close and block apps</item>
         <item>To count and block notifications,and keep the app alive while running in the background</item>
         <item>To block websites and show website usage</item>
+        <item>To start and stop scheduled blocks</item>
     </string-array>
 
 </resources>
