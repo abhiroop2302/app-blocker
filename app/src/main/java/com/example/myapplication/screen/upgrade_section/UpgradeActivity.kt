@@ -7,6 +7,7 @@ import com.example.myapplication.R
 import com.example.myapplication.abstract_managers.BaseRecyclerView
 import com.example.myapplication.abstract_managers.GenericRecyclerView
 import com.example.myapplication.databinding.ActivityUpgradeBinding
+import com.example.myapplication.recycler_view_implementors.UpgradeFeatureRecyclerImplementor
 import com.example.myapplication.utility.Constants
 import com.example.myapplication.utility.setStatusBar
 

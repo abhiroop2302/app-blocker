@@ -1,4 +1,4 @@
-package com.example.myapplication.dialogs
+package com.example.myapplication.bottom_sheet_dialogs
 
 import android.content.Context
 import android.content.Intent

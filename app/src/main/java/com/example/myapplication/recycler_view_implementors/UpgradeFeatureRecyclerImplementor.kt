@@ -1,10 +1,12 @@
-package com.example.myapplication.screen.upgrade_section
+package com.example.myapplication.recycler_view_implementors
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import com.example.myapplication.abstract_managers.BaseRecyclerView
 import com.example.myapplication.abstract_managers.GenericViewHolder
 import com.example.myapplication.databinding.ItemPermissionAskBinding
+import com.example.myapplication.screen.upgrade_section.FeatureModel
 
 class UpgradeFeatureRecyclerImplementor() : BaseRecyclerView {
     private lateinit var featureModel: ArrayList<FeatureModel>
@@ -24,6 +26,8 @@ class UpgradeFeatureRecyclerImplementor() : BaseRecyclerView {
 
     override fun onBindViewHolder(holder: GenericViewHolder, position: Int) {
         (holder.binding as ItemPermissionAskBinding).apply {
+            ivEnable.visibility = View.GONE
+            tvEnable.visibility = View.GONE
             featureModel.apply {
                 ivPermissionIcon.setImageResource(this[position].featureIcon)
                 tvPermissionName.text = this[position].featureName

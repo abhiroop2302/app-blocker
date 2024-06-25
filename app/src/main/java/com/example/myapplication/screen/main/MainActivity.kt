@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.databinding.PopUpMenuBinding
-import com.example.myapplication.dialogs.PermissionDialog
+import com.example.myapplication.bottom_sheet_dialogs.PermissionDialog
 import com.example.myapplication.manager.AppBarManager
 import com.example.myapplication.manager.NavigationManager
 import com.example.myapplication.manager.PopUpWindowManager
