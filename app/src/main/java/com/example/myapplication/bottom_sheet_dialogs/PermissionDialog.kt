@@ -16,7 +16,7 @@ import com.example.myapplication.utility.visibility
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 /**
- *  This class is the dialog classs which is used to show the list of the necessary permission to user.
+ *  This class is the dialog class which is used to show the list of the necessary permission to user.
  */
 class PermissionDialog(
     private val nonNullContext: Context,
@@ -36,11 +36,10 @@ class PermissionDialog(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setCancelable(false)
+
         setContentView(binding.root)
         Log.d("bindViewLogger", "inside on create CALLED")
-
         initView()
         setClickListener()
     }
@@ -58,6 +57,7 @@ class PermissionDialog(
             permissionRecyclerViewImplementor.setData(permissionModal)
             rlPermission.adapter = GenericRecyclerView(permissionRecyclerViewImplementor)
         }
+
     }
 
     fun showDialog(){

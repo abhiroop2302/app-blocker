@@ -49,6 +49,9 @@ class AppBarManager(
     interface AppBarOptionListener{
         fun onOptionClicked(navigator: Navigator)
         fun showPopUpWindow(view: View)
+
+        fun showDialog()
+
     }
 
 

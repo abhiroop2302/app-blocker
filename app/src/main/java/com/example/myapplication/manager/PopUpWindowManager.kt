@@ -39,6 +39,10 @@ class PopUpWindowManager (
                 popupWindow.dismiss()
             }
 
+            tvSave.setOnClickListener {
+                listener.showDialog()
+                popupWindow.dismiss()
+            }
 
         }
     }

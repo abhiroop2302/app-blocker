@@ -3,7 +3,7 @@ package com.example.myapplication.dialogs
 import com.example.myapplication.dialogs.implementors.*
 
 object DialogFactory {
-    fun create(dialogs: Dialogs):BindingManager{
+    fun create(dialogs: Dialogs):AppDialog{
         return when(dialogs){
             Dialogs.MIUI-> MIUIDialogImplementor()
             Dialogs.SAVING_TIME-> SavingDialogImplementor()

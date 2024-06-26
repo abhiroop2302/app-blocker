@@ -4,12 +4,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.databinding.PopUpMenuBinding
 import com.example.myapplication.bottom_sheet_dialogs.PermissionDialog
+import com.example.myapplication.databinding.DialogSavingTimeBinding
+import com.example.myapplication.dialogs.AppDialog
+import com.example.myapplication.dialogs.DialogFactory
+import com.example.myapplication.dialogs.DialogResultManager
+import com.example.myapplication.dialogs.Dialogs
+import com.example.myapplication.dialogs.modals.EmailModal
 import com.example.myapplication.manager.AppBarManager
 import com.example.myapplication.manager.NavigationManager
 import com.example.myapplication.manager.PopUpWindowManager
@@ -19,16 +26,14 @@ import com.example.myapplication.screen.faq_section.FAQActivity
 import com.example.myapplication.screen.notification_section.BlockedNotificationActivity
 import com.example.myapplication.screen.settings_section.SettingsActivity
 import com.example.myapplication.screen.upgrade_section.UpgradeActivity
-import com.example.myapplication.utility.ContractsUtils
-import com.example.myapplication.utility.addDefaultPermission
-import com.example.myapplication.utility.navigateToSettings
-import com.example.myapplication.utility.setStatusBar
-import com.example.myapplication.utility.visibility
+import com.example.myapplication.utility.*
 
 
 class MainActivity :
     AppCompatActivity(),
-    NavigationManager.TabChangeListener, AppBarManager.AppBarOptionListener{
+    NavigationManager.TabChangeListener,
+    AppBarManager.AppBarOptionListener,
+DialogResultManager{
 
 
     private lateinit var binding: ActivityMainBinding
@@ -40,6 +45,14 @@ class MainActivity :
 
     private val permissionModal :ArrayList<PermissionModal> by lazy {
         ArrayList()
+    }
+
+    private val savingDialogImplementor : AppDialog by lazy {
+        DialogFactory.create(Dialogs.SAVING_TIME)
+    }
+
+    private val miuiDialogImplementor : AppDialog by lazy {
+        DialogFactory.create(Dialogs.MIUI)
     }
 
 
@@ -60,6 +73,7 @@ class MainActivity :
     override fun onResume() {
         super.onResume()
         handlePermissions()
+
     }
 
     /**
@@ -117,6 +131,21 @@ class MainActivity :
 
         // necessary function
         handlePermissionView()
+
+        // initialize the app dialogs
+        initAppDialogs()
+    }
+
+    private fun initAppDialogs() {
+        savingDialogImplementor.apply {
+            initializeDialog(DialogSavingTimeBinding.inflate(layoutInflater))
+            register(this@MainActivity)
+        }
+
+        miuiDialogImplementor.apply {
+            initializeDialog(DialogSavingTimeBinding.inflate(layoutInflater))
+            register(this@MainActivity)
+        }
     }
 
     /**
@@ -154,6 +183,14 @@ class MainActivity :
             AppBarManager.Navigator.Notification -> BlockedNotificationActivity::class.java
         }
         startActivity(Intent(this, activity))
+    }
+
+
+    /**
+     *  function to show the rate us dialog
+     */
+    override fun showDialog() {
+        savingDialogImplementor.show()
     }
 
     /**
@@ -201,5 +238,17 @@ class MainActivity :
 
     init {
         instance = this
+    }
+
+    override fun <T : Any> onResult(data: T) {
+        when(data){
+            is String ->{
+                Toast.makeText(this, data, Toast.LENGTH_SHORT).show()
+            }
+
+            is EmailModal ->{
+                Toast.makeText(this, "email modal obtained ${data.content}", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
