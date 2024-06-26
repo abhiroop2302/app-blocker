@@ -250,4 +250,22 @@
         <item>To start and stop scheduled blocks</item>
     </string-array>
 
+
+    <string-array name="themes">
+        <item>System Default Theme</item>
+        <item>Light Theme</item>
+        <item>Dark Theme</item>
+    </string-array>
+
+    <string-array name="week_days">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
+
 </resources>
